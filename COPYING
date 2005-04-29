@@ -1,6 +1,8 @@
- All the Software contained in this directory is
- Copyright(C) 2004 Salvatore Sanfilippo
+ All the Software contained in this source distribution is
+ Copyright(C) 2004,2005 Salvatore Sanfilippo.
  All Rights reserved.
+
+ The file iis2apache.pl is Copyright(C) 2000 jwa@jammed.com
 
  The Software is released by the author under the
  following GPL version 2 license, except for the file named "aht.c"

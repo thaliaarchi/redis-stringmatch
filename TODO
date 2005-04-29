@@ -1,0 +1,2 @@
+- Glob-style matching in --prefix, like:
+	--prefix *invece.org
