@@ -27,10 +27,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <string.h>
 #include <ctype.h>
 
 /* Glob-style pattern matching. */
-int stringmatchlen(const char *pattern, int patternLen,
+static int stringmatchlen(const char *pattern, int patternLen,
         const char *string, int stringLen, int nocase)
 {
     while(patternLen) {
@@ -150,4 +151,8 @@ int stringmatchlen(const char *pattern, int patternLen,
     if (patternLen == 0 && stringLen == 0)
         return 1;
     return 0;
+}
+
+static int stringmatch(const char *pattern, const char *string, int nocase) {
+    return stringmatchlen(pattern,strlen(pattern),string,strlen(string),nocase);
 }
