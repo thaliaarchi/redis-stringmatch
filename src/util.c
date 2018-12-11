@@ -27,6 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -157,4 +158,20 @@ int stringmatchlen(const char *pattern, int patternLen,
 
 int stringmatch(const char *pattern, const char *string, int nocase) {
     return stringmatchlen(pattern,strlen(pattern),string,strlen(string),nocase);
+}
+
+/* Fuzz stringmatchlen() trying to crash it with bad input. */
+int stringmatchlen_fuzz_test(void) {
+    char str[32];
+    char pat[32];
+    int cycles = 10000000;
+    int total_matches = 0;
+    while(cycles--) {
+        int strlen = rand() % sizeof(str);
+        int patlen = rand() % sizeof(pat);
+        for (int j = 0; j < strlen; j++) str[j] = rand() % 128;
+        for (int j = 0; j < patlen; j++) pat[j] = rand() % 128;
+        total_matches += stringmatchlen(pat, patlen, str, strlen, 0);
+    }
+    return total_matches;
 }

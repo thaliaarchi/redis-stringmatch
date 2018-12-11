@@ -32,5 +32,6 @@
 
 int stringmatchlen(const char *p, int plen, const char *s, int slen, int nocase);
 int stringmatch(const char *p, const char *s, int nocase);
+int stringmatchlen_fuzz_test(void);
 
 #endif
