@@ -74,12 +74,12 @@ static int stringmatchlen_impl(const char *pattern,
             stringLen--;
             break;
         case '[': {
-            int not, match;
+            int not_op, match;
 
             pattern++;
             patternLen--;
-            not= pattern[0] == '^';
-            if (not) {
+            not_op = pattern[0] == '^';
+            if (not_op) {
                 pattern++;
                 patternLen--;
             }
@@ -122,7 +122,7 @@ static int stringmatchlen_impl(const char *pattern,
                 pattern++;
                 patternLen--;
             }
-            if (not) match = !match;
+            if (not_op) match = !match;
             if (!match) return 0; /* no match */
             string++;
             stringLen--;
