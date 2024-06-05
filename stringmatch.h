@@ -27,8 +27,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __REDIS_UTIL_H
-#define __REDIS_UTIL_H
+#ifndef __STRINGMATCH_H
+#define __STRINGMATCH_H
 
 int stringmatchlen(const char *p, int plen, const char *s, int slen, int nocase);
 int stringmatch(const char *p, const char *s, int nocase);

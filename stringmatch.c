@@ -32,7 +32,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "util.h"
+#include "stringmatch.h"
 
 /* Glob-style pattern matching. */
 static int stringmatchlen_impl(const char *pattern, int patternLen,
