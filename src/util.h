@@ -9,6 +9,8 @@
 #ifndef __REDIS_UTIL_H
 #define __REDIS_UTIL_H
 
+int prefixmatch(const char *pattern, int patternLen, const char *prefixStr, 
+                int prefixStrLen, int nocase);
 int stringmatchlen(const char *p, int plen, const char *s, int slen, int nocase);
 int stringmatch(const char *p, const char *s, int nocase);
 int stringmatchlen_fuzz_test(void);
